@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+{% block crud_container %}
+{{title}}
+<br>
+<br>
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        {% for item in user %}
+        <li class="list-group-item">{{ item.username }}</li>
+        <li class="list-group-item">{{ item.password }}</li>
+        <li class="list-group-item"><a href="./update_user_form/{{ item.id }}"> Обновить</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock crud_container%}
+
+

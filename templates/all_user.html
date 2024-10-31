@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+
+{% block crud_container %}
+<br>
+{% for user in db_users %}
+<div class="card" style="
+    margin: 15px">
+
+    <h5 class="card-header">id {{user.id}}</h5>
+    <div class="card-body">
+        <p class="card-text">name {{user.username}}</p>
+        <a href="{{ user.id }}" class="btn btn-primary">Обновить</a>
+    </div>
+</div>
+   {% endfor %}
+
+{% endblock crud_container%}
+

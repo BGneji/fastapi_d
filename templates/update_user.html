@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+
+{% block crud_container %}
+
+
+<h1>Обновить пользователя</h1>
+<form action="../update_user" method="post">
+    {% if error or error1 %}
+    <p style="color: red;">{{ error1 }}</p>
+
+    {% endif %}
+    <input type="hidden" name="user_id" value="{{ user_id }}">
+    <label for="old_password">Старый пароль:</label>
+    <input type="password" class="form-control" id="old_password" name="old_password" required>
+    <br>
+
+
+    <input type="hidden" name="user_id" value="{{ user_id }}">
+    <label for="username">Имя пользователя:</label>
+    <input type="text" class="form-control" id="username" name="username" required>
+    <br>
+    <label for="password">Пароль:</label>
+    <input type="password" class="form-control" id="password" name="password" required>
+    <br>
+    <label for="repeat_password">Повторите пароль:</label>
+    <input type="password" class="form-control" id="repeat_password" name="repeat_password" required>
+    <br>
+    <button class="btn btn-primary" type="submit">Обновить</button>
+</form>
+
+<br>
+<a href="/">Главная страница</a>
+{% endblock crud_container%}

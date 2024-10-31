@@ -1,0 +1,27 @@
+{% extends "main.html" %}
+
+{% block crud_container %}
+<h1>Регистрация пользователя</h1>
+{% if error or error1 %}
+<p style="color: red;">{{ error }}</p>
+<p style="color: red;">{{ error1 }}</p>
+{% endif %}
+<form action="/register/" method="post">
+    <div class="mb-3">
+        <label for="username" class="form-label">Имя пользователя:</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <div class="mb-3">
+        <label for="repeat_password" class="form-label">Repeat_password</label>
+        <input type="password" class="form-control" id="repeat_password" name="repeat_password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+</form>
+<br>
+<a href="/">Главная страница</a>
+{% endblock crud_container%}
